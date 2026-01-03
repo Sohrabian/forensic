@@ -91,8 +91,32 @@ Primary Function: Stores user-specific COM class registrations, shellbag data, a
 Step 5 - Instead of "step 04 " using this batch file in cmd
   for /r %i in (*) do (C:\Tools\RegRipper\rip.exe -r %i -a > %i.txt)
 
-Step 6 - 
+Step 6 - Users, Groups and User Profiles
 ## References
 - [Understand Security Identifiers](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers) - Microsoft documentation on Windows Server Security Identifiers
 
+- The Questions during this investigation 
+  How Many users that are exist on the Client ?
+    net user
+  How Many Local Group are exists on the SYSTEM ?
+    net localGroup
+  Find the USER SID ?
+    whoami /user
+  Active accounts during the attack timeframe?
+  Which account(s) were created ?
+  Which accounts are Administrator group members?
+  Which users have profiles?
+
+
+  Registry Explorer Find the users and Group [ also we can find via regripper output on SAM.txt ]
+    C:\Cases\E\Windows\System32\config\SAM
+
+    click on the [Avalable bookmarks] 
+    click on the [User accounts]
+    click on the "users"
+    click on the "export" to Investigation via "TimeLineExplorer.exe"
+
+  Answer this question - When was the Profiles has been Written on the OS via "profilelist"
+  for Example When was the last time the "IEUSER" has been written on a Filder, .dox and son on
+  C:\Cases\E\Windows\System32\Config\SAM > SAM.txt
 
