@@ -1,4 +1,4 @@
-Step 01 - collect the first Evedince, Create a folder named {Analysis\Registry}
+📁 Step 01 - collect the first Evedince, Create a folder named {Analysis\Registry}
 E:\Windows\System32\config
   Default
   SAM
@@ -9,7 +9,7 @@ E:\Users\{User-Name}
   NTUSER.DAT
 E:\Users\{User-Name}\AppDATA\Local\Microsoft\Windows
   UsrClass.dat
-Step 02 - Collection of System Information [ ZimmerMan Registry Explorer ]
+📁 Step 02 - Collection of System Information [ ZimmerMan Registry Explorer ]
   ComputerName
   HKLM\System\CurrentControlSet\Control\Computername\
   Windows Version 
@@ -21,7 +21,7 @@ Step 02 - Collection of System Information [ ZimmerMan Registry Explorer ]
   Defender Settings
   HKLM\Software\Microsoft\Windows Defender\
 
-Step 03 - Using "regripper" and Find these Question 
+📁 Step 03 - Using "regripper" and Find these Question 
   rip.exe -r C:\Cases\Analysis\Registry\SOFTWARE -p winver
   rip.exe -r C:\Cases\Analysis\Registry\SYSTEM -p timezone
   rip.exe -r C:\Cases\Analysis\Registry\SYSTEM -p nic2
@@ -82,7 +82,7 @@ Primary Function: Stores user-specific COM class registrations, shellbag data, a
 | **Loading** | At user login | When shell/Explorer starts |
 -----------------------------------------------------------------------------------
 
-Step 4 - Create non-hidden file for "NTUSER.dat" , "USRCLASS.dat"
+📁 Step 4 - Create non-hidden file for "NTUSER.dat" , "USRCLASS.dat"
   attrib *
   attrib -h NTUSER.DAT
   attrib -h UsrClass.dat
@@ -90,3 +90,9 @@ Step 4 - Create non-hidden file for "NTUSER.dat" , "USRCLASS.dat"
 
 Step 5 - Instead of "step 04 " using this batch file in cmd
   for /r %i in (*) do (C:\Tools\RegRipper\rip.exe -r %i -a > %i.txt)
+
+Step 6 - 
+## References
+- [Understand Security Identifiers](https://learn.microsoft.com/en-us/windows-server/identity/ad-ds/manage/understand-security-identifiers) - Microsoft documentation on Windows Server Security Identifiers
+
+
